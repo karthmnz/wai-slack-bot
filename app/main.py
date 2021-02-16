@@ -24,5 +24,6 @@ def repeat_text(ack, say, command):
 def repeat_text(ack, say, command):
     ack()
     #channel_id = command["channel_id"]
-    repeat = '! '.join(command['text'] * 3)
+    str_text = ''.join(command['text'])
+    repeat = '! '.join([str_text] * 3)
     say(f"{repeat}")
