@@ -20,10 +20,11 @@ def repeat_text(ack, say, command):
     # channel_id = command["channel_id"]
     say(f"{command['text'][::-1]}")
 
+
 @app.command('/echo')
 def repeat_text(ack, say, command):
     ack()
     print(command)
     channel_id = command["channel_id"]
-    repeat = '!'.join([command['text']*3])
+    repeat = '!'.join([command['text'] * 3])
     say(f"{repeat}")
