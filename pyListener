@@ -12,13 +12,21 @@ app = App(
 def wai_timer(message, say):
     say(f"Hey There <@{message['user']}>!")
 
-@app.command('/echo')
+
+@app.command('/rev')
 def repeat_text(ack, say, command):
     ack()
     print(command)
-    say(f"{command['text']}")
+    # channel_id = command["channel_id"]
+    say(f"{command['text'][::-1]}")
 
+@app.command('/echo')
+def repeat_text(ack, say, command):
+    ack()/ech
+    print(command)
+    channel_id = command["channel_id"]
+    repeat = '!'.join([command['text']*3])
+    say(f"{repeat}")
 
 if __name__ == "__main__":
     app.start(port=int(os.environ.get("PORT", 3000)))
-
