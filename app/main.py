@@ -16,7 +16,6 @@ def wai_timer(message, say):
 @app.command('/rev')
 def repeat_text(ack, say, command):
     ack()
-    print(command)
     # channel_id = command["channel_id"]
     say(f"{command['text'][::-1]}")
 
@@ -24,7 +23,6 @@ def repeat_text(ack, say, command):
 @app.command('/echo')
 def repeat_text(ack, say, command):
     ack()
-    print(command)
-    channel_id = command["channel_id"]
+    #channel_id = command["channel_id"]
     repeat = '!'.join([command['text'] * 3])
     say(f"{repeat}")
