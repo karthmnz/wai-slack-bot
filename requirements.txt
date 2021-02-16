@@ -1,2 +1,3 @@
+gunicorn==20.0.4
 slack-bolt==1.3.2
 slack-sdk==3.3.2
