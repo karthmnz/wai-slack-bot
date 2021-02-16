@@ -27,6 +27,3 @@ def repeat_text(ack, say, command):
     channel_id = command["channel_id"]
     repeat = '!'.join([command['text']*3])
     say(f"{repeat}")
-
-if __name__ == "__main__":
-    app.start(port=int(os.environ.get("PORT", 3000)))
