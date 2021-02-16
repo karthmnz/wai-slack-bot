@@ -1,4 +1,5 @@
 import os
+import re
 from slack_bolt import App
 
 app = App(
@@ -7,9 +8,14 @@ app = App(
 )
 
 
-@app.message()
+@app.message(re.compile("(hey|hi|hello)"))
+def wai_timer(message, say):
+    say(f"Hey There <@{message['user']}>!")
 
-
+@app.command('/echo')
+def repeat_text(ack, say, command):
+    ack()
+    say(f"{command['text']}")
 
 
 
