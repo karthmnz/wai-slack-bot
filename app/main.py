@@ -8,7 +8,7 @@ app = App(
 )
 
 done = False
-@app.message(re.compile("(hey|hi|hello)"))
+@app.message(re.compile("(hey|hi|hello|Hey|Hi|Hello)"))
 def wai_timer(message, say):
     say(f"Hey There <@{message['user']}>!")
         
