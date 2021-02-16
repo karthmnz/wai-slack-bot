@@ -22,7 +22,7 @@ def repeat_text(ack, say, command):
 
 @app.command('/echo')
 def repeat_text(ack, say, command):
-    ack()/ech
+    ack()
     print(command)
     channel_id = command["channel_id"]
     repeat = '!'.join([command['text']*3])
