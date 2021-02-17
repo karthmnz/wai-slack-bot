@@ -10,21 +10,28 @@ app = App(
 done = False
 @app.message(re.compile("(hey|hi|hello)"))
 def wai_timer(message, say):
-    say(f"Hey There <@{message['user']}>!")
-        
-
+    try:
+        say(f"Hey There <@{message['user']}>!")
+    except:
+        pass
 
 @app.command('/rev')
 def repeat_text(ack, say, command):
-    ack()
-    # channel_id = command["channel_id"]
-    say(f"{command['text'][::-1]}")
+    try:
+        ack()
+        # channel_id = command["channel_id"]
+        say(f"{command['text'][::-1]}")
+    except:
+        pass
 
 
 @app.command('/echo')
 def repeat_text(ack, say, command):
-    ack()
-    #channel_id = command["channel_id"]
-    str_text = ''.join(command['text'])
-    repeat = '! '.join([str_text] * 3) + '!'
-    say(f"{repeat}")
+    try:
+        ack()
+        #channel_id = command["channel_id"]
+        str_text = ''.join(command['text'])
+        repeat = '! '.join([str_text] * 3) + '!'
+        say(f"{repeat}")
+   except:
+        pass
