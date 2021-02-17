@@ -33,5 +33,5 @@ def repeat_text(ack, say, command):
         str_text = ''.join(command['text'])
         repeat = '! '.join([str_text] * 3) + '!'
         say(f"{repeat}")
-   except:
+    except:
         pass
