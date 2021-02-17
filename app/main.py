@@ -41,7 +41,6 @@ def repeat_text(ack, say, command):
         pass
 
 
-# You probably want to use a database to store any conversations information ;)
 conversations_store = {}
 
 
@@ -55,8 +54,6 @@ def fetch_conversations():
         pass
         # logger.error("Error fetching conversations: {}".format(e))
 
-
-# Put conversations into the JavaScript object
 def save_conversations(conversations):
     conversation_id = ""
     for conversation in conversations:
